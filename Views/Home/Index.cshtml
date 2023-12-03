@@ -1,0 +1,27 @@
+﻿@{
+  ViewData["Title"] = "Home";
+}
+
+<div>
+  <h1>Home</h1>
+  
+  <turbo-frame id="first-frame">
+    <div>
+      <a asp-controller="Home" asp-action="FirstFrame">First Frame</a>
+    </div>
+  </turbo-frame>
+  
+  <div>
+    <a asp-controller="Home" asp-action="SecondFrame" data-turbo-frame="second-frame">Second Frame</a>
+  </div> 
+  
+  <turbo-frame id="second-frame">
+    <span>This content should be replaced when the Second Frame link is clicked</span>
+  </turbo-frame>
+   
+  <div>
+    <a asp-controller="Home" asp-action="TopFrame" data-turbo-frame="_top">Replace Page</a>
+  </div> 
+  
+  
+</div>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="~/vite.svg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewData["Title"]</title>
+  <link rel="stylesheet" vite-href="~/style.css" asp-append-version="true" />
+</head>
+<body>
+<header>
+  <a asp-controller="Home" asp-action="Index">Home</a>
+  <a asp-controller="Home" asp-action="About">About</a>
+</header>
+<main role="main" id="app">
+  @RenderBody()
+</main>
+
+<script type="module" vite-src="~/main.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
