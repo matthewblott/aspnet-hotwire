@@ -1,0 +1,12 @@
+@model aspnet_hotwire.Data.Note
+
+<turbo-frame id="note_@Model.Id">
+  <form method="post">
+    <input type="hidden" asp-for="@Model.Id">
+    <div>
+      <input asp-for="@Model.Name">
+      <a asp-action="Index">Cancel</a>
+      <button asp-action="Update" asp-route-id="@Model.Id">Save</button>
+    </div>
+  </form>
+</turbo-frame>

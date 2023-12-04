@@ -1,0 +1,7 @@
+@model aspnet_hotwire.Data.Note
+
+<turbo-stream action="replace" target=@("note_" + Model.Id)>
+  <template>
+    <partial name="Show" model="@Model" />
+  </template>
+</turbo-stream>

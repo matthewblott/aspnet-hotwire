@@ -1,0 +1,11 @@
+@model aspnet_hotwire.Data.Note
+
+<turbo-frame id="note_@Model.Id">
+  <div>
+    <p>@Model.Name</p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <form method="post">
+      <button asp-action="Delete" asp-route-id="@Model.Id">Delete</button>
+    </form>
+  </div>
+</turbo-frame>

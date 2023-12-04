@@ -14,15 +14,15 @@ function list_child_processes () {
       return 0;
     fi;
 }
-ps 58602;
+ps 62708;
 while [ $? -eq 0 ];
 do
   sleep 1;
-  ps 58602 > /dev/null;
+  ps 62708 > /dev/null;
 done;
-for child in $(list_child_processes 58621);
+for child in $(list_child_processes 62729);
 do
   echo killing $child;
   kill -s KILL $child;
 done;
-rm /Users/Matt/Develop/lab/aspnet-hotwire/11c56606764c4c4794bbf1ef0798e2ba.sh;
+rm /Users/Matt/Develop/lab/aspnet-hotwire/b0caa5b8920e4209a7bc6030b56844f8.sh;
