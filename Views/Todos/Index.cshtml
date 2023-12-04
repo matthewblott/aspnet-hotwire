@@ -1,0 +1,16 @@
+@using aspnet_hotwire.Data
+@using aspnet_hotwire.Hubs
+
+<signalr-turbo-stream hub=@($"/{nameof(AppHub)}") method="TodosChanged"></signalr-turbo-stream>
+
+<div>
+  <h2>Todos</h2>
+  <a asp-action="New" data-turbo-frame="todo_0">New Todo</a>
+  <turbo-frame id="todo_0">
+  </turbo-frame>
+  <turbo-frame id="todos">
+    @foreach(var todo in Todos.Instance) {
+    <partial name="Show" model="@todo"></partial>
+    }
+  </turbo-frame>
+</div>

@@ -1,0 +1,7 @@
+@model aspnet_hotwire.Data.Todo
+
+<turbo-stream action="replace" target=@("todo_" + Model.Id)>
+  <template>
+    <partial name="Show" model="@Model" />
+  </template>
+</turbo-stream>

@@ -1,0 +1,11 @@
+@model aspnet_hotwire.Data.Todo
+
+<turbo-frame id="todo_0">
+  <form method="post">
+    <div>
+      <input asp-for="@Model.Name" />
+      <a asp-action="Index">Cancel</a>
+      <button asp-action="Create">Save</button>
+    </div>
+  </form>
+</turbo-frame>

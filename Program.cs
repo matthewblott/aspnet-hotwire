@@ -1,8 +1,13 @@
+using aspnet_hotwire.Hubs;
+using aspnet_hotwire.Services;
 using Vite.AspNetCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddTransient<IRazorPartialToStringRenderer, RazorPartialToStringRenderer>();
+builder.Services.AddSignalR();
 builder.Services.AddViteServices(options =>
 {
 	options.Server.AutoRun = true;
@@ -10,11 +15,6 @@ builder.Services.AddViteServices(options =>
 });
 
 var app = builder.Build();
-
-if (!app.Environment.IsDevelopment())
-{
-	app.UseExceptionHandler("/Home/Error");
-}
 
 app.UseStaticFiles();
 app.UseRouting();
@@ -29,4 +29,5 @@ if (app.Environment.IsDevelopment())
 	app.UseViteDevMiddleware();
 }
 
+app.MapHub<AppHub>("/appHub");
 app.Run();

@@ -12,6 +12,7 @@
 		"vite": "^5.0.2"
 	},
 	"dependencies": {
-		"@hotwired/turbo": "8.0.0-beta.1"
+		"@hotwired/turbo": "8.0.0-beta.1",
+		"@microsoft/signalr": "^8.0.0"
 	}
 }
