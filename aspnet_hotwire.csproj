@@ -11,8 +11,4 @@
 	  <PackageReference Include="Vite.AspNetCore" Version="1.11.0" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Assets\controllers\" />
-	</ItemGroup>
-
 </Project>

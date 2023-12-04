@@ -1,0 +1,10 @@
+<style>
+  .foo {
+    background-color: lightyellow;  
+  }
+</style>
+
+<div data-controller="hello" data-hello-counter-value="0" data-hello-empty-class="foo">
+  <input data-hello-target="username" data-action="input->hello#usernameChange">
+  <button data-action="click->hello#greet">Greet</button>
+</div>
