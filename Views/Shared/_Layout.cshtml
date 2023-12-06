@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="icon" type="image/svg+xml" href="~/vite.svg">
+	<link rel="icon" type="image/svg+xml" href="~/img/vite.svg">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>@ViewData["Title"]</title>
-  <script type="module" vite-src="~/main.js" asp-append-version="true" defer data-load-track="reload"></script>
-  <link rel="stylesheet" vite-href="~/style.css" asp-append-version="true" data-load-track="reload">
+  <environment names="Staging,Production">
+    <link rel="stylesheet" asp-href-include="~/dist/assets/main-*.css" />
+  </environment>
 </head>
 <body>
-<header>
-  <a asp-controller="Home" asp-action="Index">Home</a>
-  <a asp-controller="Notes" asp-action="Index">Notes</a>
-  <a asp-controller="Todos" asp-action="Index">Todos</a>
-  <a asp-controller="Home" asp-action="About">About</a>
-</header>
-<main id="app">
-  @RenderBody()
-</main>
+  <header>
+    <a asp-controller="Home" asp-action="Index">Home</a>
+    <a asp-controller="Notes" asp-action="Index">Notes</a>
+    <a asp-controller="Todos" asp-action="Index">Todos</a>
+    <a asp-controller="Home" asp-action="About">About</a>
+  </header>
+  <main id="app">
+    @RenderBody()
+  </main>
 
-@await RenderSectionAsync("Scripts", required: false)
+  <environment names="Development">
+    <script type="module" src="~/dist/@@vite/client"></script>
+    <script type="module" src="~/dist/js/main.js"></script>
+  </environment>
+  <environment names="Staging,Production">
+    <script type="module" asp-src-include="~/dist/assets/main-*.js"></script>
+  </environment>
+  @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

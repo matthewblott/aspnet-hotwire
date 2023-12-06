@@ -1,4 +1,4 @@
-import './style.css'
+import '../css/style.css'
 
 import * as Turbo from '@hotwired/turbo'
 Turbo.session.drive = true

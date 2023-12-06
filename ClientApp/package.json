@@ -9,7 +9,7 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"vite": "^5.0.2"
+		"vite": "^5.0.5"
 	},
 	"dependencies": {
 		"@hotwired/stimulus": "^3.2.2",

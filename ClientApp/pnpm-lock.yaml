@@ -20,8 +20,8 @@ dependencies:
 
 devDependencies:
   vite:
-    specifier: ^5.0.2
-    version: 5.0.4
+    specifier: ^5.0.5
+    version: 5.0.5
 
 packages:
 
@@ -513,8 +513,8 @@ packages:
       requires-port: 1.0.0
     dev: false
 
-  /vite@5.0.4:
-    resolution: {integrity: sha512-RzAr8LSvM8lmhB4tQ5OPcBhpjOZRZjuxv9zO5UcxeoY2bd3kP3Ticd40Qma9/BqZ8JS96Ll/jeBX9u+LJZrhVg==}
+  /vite@5.0.5:
+    resolution: {integrity: sha512-OekeWqR9Ls56f3zd4CaxzbbS11gqYkEiBtnWFFgYR2WV8oPJRRKq0mpskYy/XaoCL3L7VINDhqqOMNDiYdGvGg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
