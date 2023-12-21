@@ -1,6 +1,6 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "/dist/node_modules/.vite/deps/@hotwired_stimulus.js"
 
-export default class extends Controller {
+export default class FooController extends Controller {
 
   connect() {
     this.sayHi('foo');

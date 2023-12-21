@@ -1,5 +1,6 @@
 using aspnet_hotwire.Hubs;
 using aspnet_hotwire.Services;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,14 @@ builder.Services.AddSignalR();
 var app = builder.Build();
 
 app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+  FileProvider = new PhysicalFileProvider(
+    Path.Combine(builder.Environment.ContentRootPath, "Views", "Foo", "Scripts")),
+    RequestPath = "/foo-js"
+});
+
+
 app.UseRouting();
 app.UseAuthorization();
 

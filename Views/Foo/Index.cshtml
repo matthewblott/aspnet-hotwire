@@ -1,0 +1,13 @@
+<h1>Foo</h1>
+
+<div data-controller="foo">
+</div>
+
+@section Scripts
+{
+  <script type="module">
+    import FooController from "/foo-js/foo_controller.js"
+    Stimulus.register("foo", FooController)
+  </script>
+}
+

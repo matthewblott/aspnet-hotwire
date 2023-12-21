@@ -7,7 +7,7 @@ import './signalRTurboStreamElement'
 
 import { Application } from "@hotwired/stimulus"
 const application = Application.start();
-
+window.Stimulus = application
 const controllers = import.meta.glob('./**/*_controller.js')
 
 Object.entries(controllers).forEach((obj, idx) => {
